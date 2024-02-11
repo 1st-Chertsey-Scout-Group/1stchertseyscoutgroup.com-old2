@@ -1,5 +1,4 @@
 ---
-//import ThemeSwitcher from "../components/theme-switcher.component.astro";
 import Container from "./container.component.astro";
 import ScoutsLogo from "./scouts-logo.component.astro";
 
@@ -31,7 +30,7 @@ import ThemeSwitcher from "./theme-switcher.component.astro";
         </div>
         <ul
           id="collapseMenu"
-          class="lg:!flex lg:space-x-5 max-lg:space-y-2 max-lg:hidden max-lg:py-4 max-lg:w-full"
+          class="lg:!flex lg:space-x-5 max-lg:space-y-2 max-lg:hidden max-lg:py-4 max-lg:w-full pb-0"
         >
           <li
             class="max-lg:border-b max-lg:bg-red-600 max-lg:py-2 px-3 max-lg:rounded"
@@ -43,6 +42,26 @@ import ThemeSwitcher from "./theme-switcher.component.astro";
               Home
             </a>
           </li>
+          <li
+            class="max-lg:border-b max-lg:bg-red-600 max-lg:py-2 px-3 max-lg:rounded"
+          >
+            <a
+              href="/sections"
+              class="lg:hover:text-red-600 text-red-600 max-lg:text-white block text-[15px]"
+            >
+              Sections
+            </a>
+          </li>
+          <li
+          class="max-lg:border-b max-lg:bg-red-600 max-lg:py-2 px-3 max-lg:rounded"
+        >
+          <a
+            href="/news"
+            class="lg:hover:text-red-600 text-red-600 max-lg:text-white block text-[15px]"
+          >
+            News
+          </a>
+        </li>
         </ul>
       </div>
     </Container>

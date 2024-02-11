@@ -1,9 +1,8 @@
 ---
-import BaseLayout from "../layouts/base.layout.astro";
+import BaseLayout from "./base.layout.astro";
 
 import Footer from "../components/core/footer-navigation.component.astro";
 import Header from "../components/core/header-navigation.component.astro";
-import Container from "../components/core/container.component.astro";
 
 interface Props {
   title: string;
@@ -19,11 +18,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
       {title}
     </div>
 
-    <Container>
-      <div class="py-4">
-        <slot />
-      </div>
-    </Container>
+    <slot />
   </main>
   <Footer />
 </BaseLayout>

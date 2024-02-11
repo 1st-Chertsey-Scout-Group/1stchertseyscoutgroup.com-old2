@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+
+interface SectionTileProps {
+  image: any;
+  imageAlt: string;
+  href: string;
+  title: string;
+  description: string;
+  link: string;
+  bgColour: string;
+}
+const { image, imageAlt, href, title, description, link,bgColour } =
+  Astro.props as SectionTileProps;
+---
+
+<div class="bg-stone-100 dark:bg-stone-900 flex flex-col h-full">
+  <div class={bgColour}>
+    <a href={href} aria-hidden="true" role="presentation" tabindex="-1">
+      <Image
+        src={image}
+        alt={imageAlt}
+        class="opacity-5 object-cover w-full h-56"
+      />
+    </a>
+  </div>
+  <div class="flex flex-col h-full p-4">
+    <a href={href} class="h5 pb-1 text-reset">
+      {title}
+    </a>
+    <div class="">
+      {description}
+    </div>
+    <a href={href} class="font-bold pt-2 mt-auto">{link}</a>
+  </div>
+</div>

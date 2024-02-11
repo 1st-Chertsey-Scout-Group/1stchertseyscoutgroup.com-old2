@@ -1,0 +1,28 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import PageLayout from "../../layouts/page.layout.astro";
+
+let sectionEntries = await getCollection("sections");
+
+import SectionTile from "../../components/sections/section-tile.component.astro";
+---
+
+
+<PageLayout title="Sections">
+  <div class="flex flex-wrap justify-center">
+    {
+      sectionEntries.map((section) => (
+        <div class="p-4 w-1/4">
+          <SectionTile section={section} ageGroup={section.data["age-group"]} />
+        </div>
+      ))
+    }
+  </div>
+</PageLayout>
+
+
+<div class="bg-beaver-blue"></div>
+<div class="bg-scout-green"></div>
+<div class="bg-squirrel-red"></div>
+<div class="bg-cub-green"></div>
+<div class="bg-explorer-blue"></div>

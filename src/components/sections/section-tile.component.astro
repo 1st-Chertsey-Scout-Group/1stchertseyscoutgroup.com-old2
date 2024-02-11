@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+
+interface SectionTileProps {
+  title: string;
+  ageGroup: any;
+}
+import Card from "../core/card.component.astro";
+const { section, ageGroup } = Astro.props as SectionTileProps;
+
+const ageGroupEntry = await getEntry(ageGroup);
+---
+
+<Card
+  image={ageGroupEntry.data.image}
+  imageAlt={"Photo of " + ageGroupEntry.data.title + " logo"}
+  href={'sections/' + section.slug}
+  title={section.data.title + " (" + ageGroupEntry.data.age + "years)"}
+  description={section.data.tagline}
+  link="Find out more &gt;"
+  bgColour={"bg-" + ageGroupEntry.data.colour}
+/>

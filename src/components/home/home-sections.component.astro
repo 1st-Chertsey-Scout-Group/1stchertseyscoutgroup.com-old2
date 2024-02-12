@@ -1,0 +1,22 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import HomeSection from "./home-section.component.astro";
+import Container from "../core/container.component.astro";
+
+let sectionEntries = await getCollection("sections");
+---
+
+<div class="bg-stone-50 dark:bg-stone-900">
+    <Container>
+        <div class="flex flex-wrap justify-center content-stretch gap-1 py-1">
+          {
+            sectionEntries.map((section) => (
+              <div class="p-4 w-1/8">
+                <HomeSection section={section} ageGroup={section.data["age-group"]} />
+              </div>
+            ))
+          }
+        </div>
+      </Container>
+      
+</div>

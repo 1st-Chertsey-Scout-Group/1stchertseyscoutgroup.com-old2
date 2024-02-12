@@ -3,13 +3,13 @@ import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 
 interface SectionTileProps {
-  title: string;
+  section: any;
   ageGroup: any;
 }
 import Card from "../core/card.component.astro";
 const { section, ageGroup } = Astro.props as SectionTileProps;
 
-const ageGroupEntry = await getEntry(ageGroup);
+const ageGroupEntry = await getEntry(ageGroup) as any;
 ---
 
 <Card

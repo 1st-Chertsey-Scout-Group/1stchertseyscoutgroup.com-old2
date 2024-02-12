@@ -1,0 +1,27 @@
+---
+import Card from "../core/card.component.astro";
+import Container from "../core/container.component.astro";
+
+import CoverImage from "../../media/hq-cover-photo.jpg";
+---
+
+<Container>
+  <div class="pt-6 mb-8 text-center">
+    <h2 class="text-4xl font-bold">Group News</h2>
+    <div class="text-lg">All the latest group news</div>
+  </div>
+
+  <div class="flex flex-wrap gap-2">
+
+    <div>
+        <Card
+        image={CoverImage}
+        imageAlt={"Comedy Night Tickets Available"}
+        href={"/news/2023/03/14/comedy-night/"}
+        title={"Comedy Night Tickets Available"}
+        description={"Comedy Night – Friday 28th April 2023 – 7pm – Scout HQ Our popular Comedy Night is back! As ever, we will have some excellent comedy acts, plus our ever-popular auction and raffle. This time, we are v..."}
+        link="Continue reading >"
+      />
+    </div>
+  </div>
+</Container>

@@ -13,15 +13,16 @@ interface SectionTileProps {
 }
 const { image, imageAlt, href, title, description, link,bgColour } =
   Astro.props as SectionTileProps;
----
 
+  let hasBgColour = bgColour != undefined && bgColour != null && bgColour.trim() != "";
+---
 <div class="bg-stone-100 dark:bg-stone-900 flex flex-col h-full">
-  <div class={bgColour}>
+  <div class={hasBgColour ? bgColour : ""}>
     <a href={href} aria-hidden="true" role="presentation" tabindex="-1">
       <Image
         src={image}
         alt={imageAlt}
-        class="opacity-5 object-cover w-full h-56"
+        class={'object-cover w-full h-56 ' + (hasBgColour ? "opacity-5" : "")}
       />
     </a>
   </div>
